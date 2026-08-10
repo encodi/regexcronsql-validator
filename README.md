@@ -119,8 +119,19 @@ Abre una UI en el navegador. Ahí:
 3. Connect → pestaña **Tools** → `List Tools` → deberías ver `validar_regex`, `validar_cron` y `validar_sql` con sus schemas.
 4. Elegí una tool, completá los inputs y `Run Tool` para ver el resultado real.
 
+## Deploy y listados
+
+Desplegado en `https://regexcronsql-validator.encodari.workers.dev/mcp` (Cloudflare Workers). Publicado en el [registry oficial de MCP](https://registry.modelcontextprotocol.io), [Smithery](https://smithery.ai/servers/encodari/regexcronsql-validator), [mcp.so](https://mcp.so) y con PR abierto a [awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers).
+
+La mayoría de los cambios de código son solo `npm run deploy` — no hace falta re-publicar en los listados salvo que cambie el precio, la descripción, o la URL del servidor. Ver [`ROADMAP.md`](./ROADMAP.md) para el detalle y el plan de mejoras a futuro.
+
+### Cómo ver si se está usando
+
+- **Pagos reales:** balance de USDC de la wallet de cobro en [BaseScan](https://basescan.org/address/0xF3aF5902240Ea7fb277748Ad5DA7Eb7582E5601e) — cada pago liquidado por x402 aparece ahí.
+- **Tráfico (pagado o no):** dashboard de Cloudflare → Workers & Pages → `regexcronsql-validator` → Metrics.
+- **Smithery:** tiene su propia página de stats por servidor.
+
 ## Qué NO hace (todavía)
 
-- No está desplegado. `npm run deploy` queda para cuando decidas hacerlo vos.
 - Cobra en Base mainnet con dinero real. Para volver a testnet (Base Sepolia, `eip155:84532`) durante desarrollo, cambiá `NETWORK` en `src/payments.ts`.
 - No tiene base de datos ni estado persistente entre llamadas (más allá de la config de cobro, cacheada en memoria por isolate — ver `src/payments.ts`).
