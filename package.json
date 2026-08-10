@@ -1,0 +1,36 @@
+{
+	"name": "regexcronsql-validator",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"deploy": "wrangler deploy",
+		"dev": "wrangler dev",
+		"format": "oxfmt --write .",
+		"lint:fix": "oxlint --fix",
+		"start": "wrangler dev",
+		"cf-typegen": "wrangler types",
+		"type-check": "tsc --noEmit",
+		"test": "vitest run",
+		"dev:node": "tsx watch scripts/dev-node.ts"
+	},
+	"dependencies": {
+		"@coinbase/x402": "^2.1.0",
+		"@modelcontextprotocol/sdk": "1.30.0",
+		"@modelcontextprotocol/server": "2.0.0",
+		"@x402/core": "^2.21.0",
+		"@x402/evm": "^2.21.0",
+		"@x402/mcp": "^2.21.0",
+		"agents": "^0.20.1",
+		"cron-parser": "^5.7.0",
+		"pg-mem": "^3.0.14",
+		"zod": "^4.4.3"
+	},
+	"devDependencies": {
+		"oxfmt": "^0.56.0",
+		"oxlint": "^1.71.0",
+		"tsx": "^4.19.2",
+		"typescript": "6.0.3",
+		"vitest": "^2.1.9",
+		"wrangler": "^4.105.0"
+	}
+}
